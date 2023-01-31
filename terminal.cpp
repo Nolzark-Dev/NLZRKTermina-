@@ -1,6 +1,6 @@
 #include <QApplication>
 
-// Add QDesktopServices
+
 #include <QDesktopServices>
 #include <QKeySequence>
 #include <QMainWindow>
@@ -8,7 +8,7 @@
 #include "qtermwidget.h"
 
 
-// Here we define the activateUrl method
+//activateUrl 
 void activateUrl(const QUrl &url, bool fromContextMenu) {
   if (QApplication::keyboardModifiers() & Qt::ControlModifier ||
       fromContextMenu) {
@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
   console->setColorScheme("Solarized");
   console->setTerminalOpacity(0.9);
 
-  // Here we connect it all together
+  
   QObject::connect(console, &QTermWidget::urlActivated, mainWindow,
                    activateUrl);
 
